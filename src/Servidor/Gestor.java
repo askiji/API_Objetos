@@ -48,7 +48,7 @@ public class Gestor {
 				}
 			}
 		}
-		else {
+		if(primeraDecision.equals("3")) {
 			// enviar los length
 			conexion.enviarInt(BBDD.clientes.size());
 			conexion.enviarInt(BBDD.vehiculos.size());

@@ -83,10 +83,11 @@ public class Menu {
 				conexion.enviarObjeto(new Vehiculo(matricula, marca, modelo, potencia));
 				
 			}
-			if(conexion.recivirBoolean()) {
+			boolean aux = conexion.recivirBoolean();
+			if(aux) {
 				System.out.println("Ya estaba en la base de datos");
 			}
-			if(!conexion.recivirBoolean()) {
+			if(!aux) {
 				System.out.println("Se ha añadido a la abse de datos");
 			}
 			
