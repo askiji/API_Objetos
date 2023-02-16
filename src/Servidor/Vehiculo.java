@@ -1,12 +1,32 @@
 package Servidor;
 
-public class Vehiculo {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Vehiculo implements Serializable{
+
 	private String matricula;
 	private String marca;
 	private String modelo;
 	private String potencia;
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehiculo other = (Vehiculo) obj;
+		return Objects.equals(matricula, other.matricula);
+	}
+
+	@Override
+	public String toString() {
+		return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", potencia=" + potencia
+				+ "]";
+	}
 	
 	public Vehiculo(String matricula, String marca, String modelo, String potencia) {
 		super();

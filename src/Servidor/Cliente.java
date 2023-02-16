@@ -1,6 +1,23 @@
 package Servidor;
 
-public class Cliente {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Cliente implements Serializable{
+
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		return Objects.equals(dni, other.dni);
+	}
 	private String dni;
 	private String Nombre;
 	private String apellido1;
@@ -8,6 +25,11 @@ public class Cliente {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "Cliente [dni=" + dni + ", Nombre=" + Nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
+				+ "]";
+	}
 	public Cliente(String dni, String nombre, String apellido1, String apellido2) {
 		super();
 		this.dni = dni;
